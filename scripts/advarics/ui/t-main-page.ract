@@ -1,0 +1,87 @@
+<style>
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding-top: 20px;
+}
+.page-container {
+    padding-top: 7em;
+}
+</style>
+<div class="container-fluid">
+  <div id="header-container">
+    <div id="header-content-area" class="header"></div>
+  </div>
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">{{header.toggleInfo}}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img class="sidebar-logo" src='{{logo}}' />
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href='{{headerLinks.about}}' target="_blank">{{header.about}}</a>
+                    </li>
+                    <li>
+                        <a href='{{headerLinks.services}}' target="_blank">{{header.services}}</a>
+                    </li>
+                    <li>
+                        <a href='{{headerLinks.contact}}' target="_blank">{{header.contact}}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<div id="layout-content-section" class="container-fluid">
+<div class="row">
+  <div class="col-md-2">
+    <div id="left-menu-acc"></div>
+  </div>
+  <div class="col-md-10 page-container">
+        <div id="main-container">
+            <div id="main-panel"></div>
+        </div>
+  </div>
+</div>
+</div>
+<div id="footer-container"></div>
+</div>
+<script>
+    component.exports = {
+        onrender: function(){
+            console.log('main-page component rendered');
+        },
+        data: function() {
+            return {
+                'logo': './public/images/advarics_logo.png',
+                header: {
+                    about: 'About',
+                    services: 'Services',
+                    contact: 'Contact',
+                    toggleInfo: 'Toggle navigation'
+                },
+                headerLinks: {
+                    about: 'http://www.ractivejs.org',
+                    services: 'http://ampersandjs.com/',
+                    contact: 'http://www.brakmic.de'
+                }
+            };
+    }
+};
+</script>

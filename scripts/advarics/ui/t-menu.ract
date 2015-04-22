@@ -1,0 +1,160 @@
+<style>
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 5px; }
+.panel-body .menu-table { margin-bottom: 0px; }
+.sidebar-wrapper {
+    margin-left: 0px;
+    left: 10px;
+    top: 100px;
+    width: 200px;
+    position: fixed;
+}
+</style>
+<!-- a typical Ractive template contains "mustaches"
+More info: http://docs.ractivejs.org/latest/templates -->
+<div class="sidebar-wrapper">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2 col-md-2">
+            <div class="panel-group" id="accordion">
+            {{#menus}}
+            {{#if visible}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#{{id}}"><span class='{{classAttr}}'>
+                            </span>{{caption}}</a>
+                        </h4>
+                    </div>
+
+                    <div id='{{id}}' class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="menu-table">
+                                {{>submenu}}
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            {{/if}}
+            {{/}}
+            </div>
+        </div>
+    </div>
+</div>
+</div> <!-- sidebar wrapper -->
+<!-- inside this partial we iterate over the Ampersand Collection by using
+its "serialize" method.
+More info on serialize: https://github.com/AmpersandJS/ampersand-collection#serialize-collectionserialize
+More info on Ractive partials: http://docs.ractivejs.org/latest/partials
+-->
+{{#partial submenu}}
+    {{#entries.serialize()}}
+    {{#if visible}}
+        <tr>
+            <td>
+                <span class='{{classAttr}}'></span><a href='{{path}}'>{{caption}}</a>
+            </td>
+        </tr>
+    {{/if}}
+    {{/entries}}
+{{/partial}}
+
+<script>
+    //inside a Ractive component we can use require
+    var MenuModel  = require('../models/app-models.js').MenuModel;
+
+    component.exports = {
+        onrender: function() {
+            console.log('menu component rendered.');
+        },
+        data: function() {
+            return {
+                menus: [
+                new MenuModel(
+                    {
+                    id: 'adv-menu-management',
+                    caption: 'Management',
+                    classAttr: 'glyphicon glyphicon-cog',
+                    visible: true,
+                    entries: [
+                            {
+                                id: 'customers',
+                                caption: 'Customers',
+                                classAttr: 'glyphicon glyphicon glyphicon-user',
+                                path: 'customers',
+                                visible: true
+                            },
+                            {
+                                id: 'clients',
+                                caption: 'Clients',
+                                classAttr: 'glyphicon glyphicon glyphicon-scale',
+                                path: 'clients',
+                                visible: true
+                            },
+                            {
+                                id: 'competitors',
+                                caption: 'Competitors',
+                                classAttr: 'glyphicon glyphicon-euro',
+                                path: 'competitors',
+                                visible: true
+                            }
+                        ]
+                }),
+                new MenuModel({
+                    id: 'adv-menu-staff',
+                    caption: 'Staff',
+                    classAttr: 'glyphicon glyphicon-barcode',
+                    visible: true,
+                    entries: [
+                        {
+                            id: 'it',
+                            caption: 'IT',
+                            classAttr: 'glyphicon glyphicon-book',
+                            path: 'it',
+                            visible: true
+                        },
+                        {
+                            id: 'sales',
+                            caption: 'Sales',
+                            classAttr: 'glyphicon glyphicon-tasks',
+                            path: 'sales',
+                            visible: true
+                        },
+                        {
+                            id: 'contractors',
+                            caption: 'Contractors',
+                            classAttr: 'glyphicon glyphicon-stats',
+                            path: 'contractors',
+                            visible: true
+                        }
+                    ]
+                }),
+                new MenuModel({
+                    id: 'adv-menu-help',
+                    caption: 'Help',
+                    classAttr: 'glyphicon glyphicon-wrench',
+                    visible: true,
+                    entries: [
+                        {
+                            id: 'retail',
+                            caption: 'Diagnose',
+                            classAttr: 'glyphicon glyphicon-list-alt',
+                            path: 'diagnose',
+                            visible: true
+                        },
+                        {
+                            id: 'log',
+                            caption: 'Log',
+                            classAttr: 'glyphicon glyphicon-pencil',
+                            path: 'log',
+                            visible: true
+                        }
+                    ]
+                })
+            ]
+            }
+        }
+    };
+</script>
