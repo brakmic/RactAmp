@@ -10,8 +10,12 @@ let imgSize    = '?size=65x65';
 let randomuser = 'http://api.randomuser.me/?format=json&results=10';
 
 //JSON data is completely lowercased
+//taken from: http://stackoverflow.com/questions/4878756
 let capitalize = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.replace(/\w\S*/g,
+      function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
 }
 //a simple toaster
 let toast = (message) => {
@@ -64,7 +68,7 @@ export default class DemoView {
                                 image: robohash + cuid() + imgSize,
                                 first: capitalize(val.user.name.first),
                                 last:  capitalize(val.user.name.last),
-                                email: capitalize(val.user.email),
+                                email: val.user.email,
                                 city:  capitalize(val.user.location.city),
                                 state: capitalize(val.user.location.state)
                             });
@@ -91,5 +95,5 @@ export default class DemoView {
               }
           }
       });
-   }
+  }
 }
