@@ -82,7 +82,7 @@ gulp.task('js', function () {
                 ]
   });
 ```
-**node-ractify** expects the component files to be named with the *.ract extension. A *.ract is basically an HTML file which contains
+**node-ractify** expects the component files to be named with the *.ract extension. A .ract is basically an HTML file which contains
 markup (CSS), structure (HTML template) and logic of the component packed inside a single *script* Tag. HTML templates don't have
 to be standard HTMLs, so we can happily use <a href="http://docs.ractivejs.org/latest/mustaches" target="_blank">Mustaches</a>
 and <a href="http://docs.ractivejs.org/latest/partials" target="_blank">Partials</a> to make the UI more dynamic.
