@@ -1,3 +1,4 @@
+import { UserModel, UserCollection } from '../models/app-models.js';
 let Ractive    = require('ractive');
 let $          = require('jquery');
 let _          = require('underscore');
@@ -55,9 +56,9 @@ export default class DemoView {
               $.get(randomuser)
                     .then(function(response) {
                         let _self;
-                        let users = [];
+                        let users = new UserCollection();
                         _.each(response.results, function(val, idx) {
-                            users.push({
+                            users.add({
                                 id: idx,
                                 image: robohash + cuid() + imgSize,
                                 first: capitalize(val.user.name.first),
