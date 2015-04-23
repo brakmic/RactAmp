@@ -11,13 +11,16 @@ choice when one wants to utilize only certain parts of a (probably) much bigger 
 This demo comprises of three Ractive <a href="https://github.com/ractivejs/component-spec" target="_blank">components</a>
 
 a) Footer
+
 b) Sidebar Menu
-b) Main Panel
+
+c) Main Panel
 
 There's a fourth Ractive element which is not a component but rather a "normal" <a href="http://docs.ractivejs.org/latest/get-started" target="_blank">Ractive</a>.
 Its tasks are creating html-tables and asynchronous communication with two web-services:
 
 a) http://www.robohash.org
+
 b) http://api.randomuser.me
 
 *Info on Ampersand elements*
