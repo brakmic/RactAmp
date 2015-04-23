@@ -50,6 +50,26 @@ var MenuModel = AmpersandModel.extend({
     }
 });
 ```
+
+*How to run the demo*
+
+First, install all needed node packages via npm.
+```bash
+npm install
+```
+
+Second, let gulp create the structure.
+
+```bash
+  gulp
+```
+
+And finally, start the local node server.
+
+```bash
+  npm start
+```
+
 *Screenshot*
 
 <img src="http://n71.imgup.net/mainpagea84b.png"/>
