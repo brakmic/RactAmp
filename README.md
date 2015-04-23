@@ -7,7 +7,7 @@ tools and customer services.
 
 
 As a performant view layer Ractive lets you decide how and by using which of the available "frameworks"
-you're gonna control backend logic. And as a "non-frameworky framework" AmpersandJS is, IMHO, an ideal
+you're gonna control backend logic. And as a "non-frameworky framework" AmpersandJS is an ideal
 choice when one wants to utilize only certain parts of a (probably) much bigger machinery to solve discrete problems.
 
 **Info on Ractive parts**
