@@ -51,7 +51,7 @@ Ractive.adaptors.Ampersand = require('ractive-adaptors-ampersand');
 
 ```javascript
 [...]
- this.instance = new Ractive({
+ let instance = new Ractive({
           el: el,
           template: require('./t-table-view.html'),
           adapt: ['Ampersand'],
