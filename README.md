@@ -54,7 +54,7 @@ the Ractive instance which will use Ampersand objects.
 [...]
 ```
 
-*Loding Ractive components (*.ract files)*
+**Loding Ractive components (*.ract files)**
 
 There are different ways to declare, maintain and run Ractive components. It can be done via ractive-load, or webpack's ractive-component
 loader, or packed in a separate file which contains all of the components styling, UI definitions and logic. This demo uses the latter
