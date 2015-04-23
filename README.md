@@ -1,6 +1,6 @@
 **RactiveJS + AmpersandJS**
 
-This demo shows how to utilize <a href="http://www.ractivejs.org/" target="_blank">RactiveJS</a> views and components together with <a href="http://www.ampersandjs.com" target="_blank">AmpersandJS</a> models.
+This demo shows how to utilize <a href="http://www.ractivejs.org/" target="_blank">RactiveJS</a> views and components together with <a href="http://ampersandjs.com" target="_blank">AmpersandJS</a> models.
 
 At <a href="http://www.advarics.net" target="_blank">advarics GmbH</a> we use both of them to develop our internal
 tools and customer services.
