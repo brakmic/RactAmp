@@ -61,9 +61,10 @@ Ractive.adaptors.Ampersand = require('ractive-adaptors-ampersand');
 
 **Loding Ractive components (*.ract files)**
 
-There are different ways to declare, maintain and run Ractive components. It can be done via ractive-load, or webpack's ractive-component
-loader, or packed in a separate file which contains all of the components styling, UI definitions and logic. This demo uses the latter
-strategy by utilizing an npm-package called <a href="https://github.com/marcello3d/node-ractify" target="_blank">node-ractify</a>.
+There are different ways to declare, maintain and run Ractive components. It can be done via <a href="https://github.com/ractivejs/ractive-load" target="_blank">ractive-load</a>, or webpack's <a href="https://www.npmjs.com/package/ractive-component-loader" target="_blank">ractive-component-loader</a>,
+or packed in a separate *.ract-file which contains all of the component's styling, UI definitions and logic.
+
+This demo uses the latter strategy by utilizing an npm-package called <a href="https://github.com/marcello3d/node-ractify" target="_blank">node-ractify</a>.
 This package is a *Browserify transformer* which gets executed during the *gulp build*.
 
 Here's the corresponding task from the Gulpfile.js where node-ractify gets activated.
