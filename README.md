@@ -10,7 +10,7 @@ As a performant view layer Ractive lets you decide how and by using which of the
 you're gonna control backend logic. And as a "non-frameworky framework" AmpersandJS is, IMHO, an ideal
 choice when one wants to utilize only certain parts of a (probably) much bigger machinery to solve discrete problems.
 
-*Info on Ractive elements*
+**Info on Ractive parts**
 
 This demo comprises of three Ractive <a href="https://github.com/ractivejs/component-spec" target="_blank">components</a>
 
@@ -27,7 +27,7 @@ a) http://www.robohash.org
 
 b) http://api.randomuser.me
 
-*Info on Ampersand elements*
+**Info on Ampersand parts**
 
 The logical structure of the sidebar menu is based on AmpersandJS <a href="https://github.com/AmpersandJS/ampersand-model" target="_blank">models</a>.
 The component template *t-menu.ract* in *scripts/advarics/ui* contains the model structure of the sidebar menu.
@@ -51,7 +51,7 @@ var MenuModel = AmpersandModel.extend({
 });
 ```
 
-*How to run the demo*
+**How to run the demo**
 
 First, install all needed node packages via npm.
 ```bash
