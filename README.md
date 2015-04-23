@@ -3,7 +3,7 @@
 This demo shows how to utilize RactiveJS views and components together with AmpersandJS models.
 
 At <a href="http://www.advarics.net" target="_blank">advarics GmbH</a> we use both of them to develop our internal
-tools and to support customer services.
+tools and customer services.
 
 
 As a performant view layer Ractive lets you decide how and by using which of the available "frameworks"
