@@ -33,23 +33,7 @@ The logical structures of the *sidebar menu* and dynamically generated *tables* 
 The component template *t-menu.ract* in *scripts/advarics/ui* contains the model structure of the sidebar menu.
 The model definitions are in *scripts/models/adv-models.js*
 
-```javascript
-var MenuModel = AmpersandModel.extend({
-    props: {
-        id        : 'string',
-        caption   : 'string',
-        classAttr : 'string',
-        path      : 'string',
-        visible   : {
-            type    : 'boolean',
-            default : false
-        }
-    },
-    collections: {
-        entries: MenuCollection
-    }
-});
-```
+Tables are defined in *t-table-view.html* and their logic is located in *demo-view.js*
 
 **How to run the demo**
 
