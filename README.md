@@ -60,6 +60,12 @@ var MenuModel = AmpersandModel.extend({
 <img src="http://img.youtube.com/vi/B4eFRskseCM/0.jpg" alt="RactiveJS and AmpersandJS"
 width="240" height="180" border="10" /></a>
 
+**Created at**
+
+<a href="http://www.advarics.net" target="_blank">advarics GmbH</a>
+
+Branch Office - Bochum, Germany
+
 **License**
 
 MIT
