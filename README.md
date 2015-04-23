@@ -54,6 +54,83 @@ the Ractive instance which will use Ampersand objects.
 [...]
 ```
 
+*Loding Ractive components (*.ract files)*
+
+There are different ways to declare, maintain and run Ractive components. It can be done via ractive-load, or webpack's ractive-component
+loader, or packed in a separate file which contains all of the components styling, UI definitions and logic. This demo uses the latter
+strategy by utilizing an npm-package called <a href="https://github.com/marcello3d/node-ractify" target="_blank">node-ractify</a>.
+This package is a *Browserify transformer* which gets executed during the *gulp build*.
+
+Here's the corresponding task from the Gulpfile.js where node-ractify gets activated.
+
+```javascript
+gulp.task('js', function () {
+  var b = browserify({
+    entries: './scripts/advarics/app.js',
+    debug: true,
+    transform: [
+                ractify,
+                browserifyCss,
+                html,
+                babelify
+                ]
+  });
+```
+**node-ractify** expects the component files to be named with the *.ract extension. A *.ract is basically an HTML file which contains
+markup (CSS), structure (HTML template) and logic of the component packed inside a single *script* Tag. HTML templates don't have
+to be standard HTMLs, so we can happily use <a href="http://docs.ractivejs.org/latest/mustaches" target="_blank">Mustaches</a>
+and <a href="http://docs.ractivejs.org/latest/partials" target="_blank">Partials</a> to make the UI more dynamic.
+
+Here's an example:
+
+```javascript
+<!-- component's styling -->
+<style>
+.some-class {
+    margin-left: 0px;
+    left: 10px;
+    top: 100px;
+    width: 200px;
+    position: fixed;
+}
+</style>
+
+<div class="some-class">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+          <ul class="pirate-o-matic">
+          {{#pirates}}
+            <li>{{firstName}} - {{lastName}}</li>
+          {{/}}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+component.exports = {
+  onrender: function() {
+    console.log('Component rendered!');
+  },
+  data: function() {
+    return {
+      pirates: [
+        { id: 1, firstName: 'Elaine', lastName: 'Marley' },
+        { id: 2, firstName: 'LeChuck', lastName: '' },
+        { id: 3, firstName: 'Guybrush', lastName: 'Treepwood' },
+        { id: 4, firstName: 'Largo', lastName: 'LaGrande' },
+      ]
+    }
+  }
+}
+
+</script>
+
+```
+
 **How to run the demo**
 
 First, install all needed node packages via npm.
