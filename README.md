@@ -107,9 +107,9 @@ Here's an example:
       <div class="col-md-5">
           <ul class="pirate-o-matic">
           <!--- we can use Mustaches -->
-          {{#pirates}}
+          {{#each pirates}}
             <li>{{firstName}} - {{lastName}}</li>
-          {{/}}
+          {{/each}}
           </ul>
       </div>
     </div>
