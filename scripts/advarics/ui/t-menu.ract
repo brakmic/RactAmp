@@ -50,7 +50,7 @@ More info on serialize: https://github.com/AmpersandJS/ampersand-collection#seri
 More info on Ractive partials: http://docs.ractivejs.org/latest/partials
 -->
 {{#partial submenu}}
-    {{#entries.serialize()}}
+    {{#entries}}
     {{#if visible}}
         <tr>
             <td>
@@ -69,6 +69,7 @@ More info on Ractive partials: http://docs.ractivejs.org/latest/partials
         onrender: function() {
             console.log('menu component rendered.');
         },
+        adapt: ['Ampersand'],
         data: function() {
             return {
                 menus: [

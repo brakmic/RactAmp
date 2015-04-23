@@ -47,6 +47,7 @@ export default class DemoView {
       this.instance = new Ractive({
           el: el,
           template: require('./t-table-view.html'),
+          adapt: ['Ampersand'],
           data: function() {
               //instead of returning some predefined data we get ours from
               //a free web service at https://randomuser.me
