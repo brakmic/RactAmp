@@ -85,7 +85,7 @@ gulp.task('js', function () {
 **node-ractify** expects the component files to be named with the .ract extension. A .ract is basically an HTML file which contains
 markup (CSS), structure (HTML template) and logic of the component packed inside a single *script* Tag. HTML templates don't have
 to be standard HTMLs, so we can happily use <a href="http://docs.ractivejs.org/latest/mustaches" target="_blank">Mustaches</a>
-and <a href="http://docs.ractivejs.org/latest/partials" target="_blank">Partials</a> to make the UI more dynamic.
+and <a href="http://docs.ractivejs.org/latest/partials" target="_blank">Partials</a> to make our UIs more dynamic.
 
 Here's an example:
 
@@ -100,12 +100,13 @@ Here's an example:
     position: fixed;
 }
 </style>
-
+<!-- component's UI structure -->
 <div class="some-class">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
           <ul class="pirate-o-matic">
+          <!--- we can use Mustaches -->
           {{#pirates}}
             <li>{{firstName}} - {{lastName}}</li>
           {{/}}
@@ -114,11 +115,14 @@ Here's an example:
     </div>
   </div>
 </div>
-
+<!-- component's logic -->
 <script>
-
+//we can require other modules too
+var someOtherModule = require('some-other-module');
+//this is the same like CommonJS exports
 component.exports = {
   onrender: function() {
+    someOtherModule.execute();
     console.log('Component rendered!');
   },
   data: function() {
