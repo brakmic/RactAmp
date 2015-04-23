@@ -39,7 +39,8 @@ Tables are defined in *t-table-view.html* and their logic is located in *demo-vi
 
 To make Ractive capable of using Ampersand *models, collections and rest-collections* we have to inject a proper Adaptor into it.
 In this case we need the <a href="https://www.npmjs.com/package/ractive-adaptors-ampersand" targrt="_blank">Ampersand-Adaptor</a>.
-Next we have to activate the adaptor inside the Ractive which will use Ampersand objects.
+After we have added it into the globally available collection of Ractive-Adapters we have to activate it on
+the Ractive instance which will use Ampersand objects.
 
 *Example*
 
