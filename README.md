@@ -89,7 +89,7 @@ and <a href="http://docs.ractivejs.org/latest/partials" target="_blank">Partials
 
 Here's an example:
 
-```javascript
+```html
 <!-- component's styling -->
 <style>
 .some-class {
