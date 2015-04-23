@@ -2,6 +2,10 @@
 
 This demo shows how to utilize RactiveJS views and components together with AmpersandJS models.
 
+At <a href="http://www.advarics.net" target="_blank">advarics GmbH</a> we use both of them to develop our internal
+tools and to support customer services.
+
+
 As a performant view layer Ractive lets you decide how and by using which of the available "frameworks"
 you're gonna control backend logic. And as a "non-frameworky framework" AmpersandJS is, IMHO, an ideal
 choice when one wants to utilize only certain parts of a (probably) much bigger machinery to solve discrete problems.
