@@ -31,7 +31,7 @@ b) http://api.randomuser.me
 
 The logical structures of the *sidebar menu* and dynamically generated *tables* are based on AmpersandJS <a href="https://github.com/AmpersandJS/ampersand-model" target="_blank">models</a>.
 The component template *t-menu.ract* in *scripts/advarics/ui* contains the model structure of the sidebar menu.
-The model definitions are in *scripts/models/adv-models.js*
+The model definitions are in *scripts/models/app-models.js*
 
 Tables are defined in *t-table-view.html* and their logic is located in *demo-view.js*
 
